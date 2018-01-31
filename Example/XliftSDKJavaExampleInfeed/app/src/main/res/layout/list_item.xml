@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="jp.xlift.android.sdk.example.XliftInfeedAdViewModel" />
+    </data>
+    <android.support.constraint.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:descendantFocusability="blocksDescendants"
+        android:minHeight="120dp"
+        android:onClick="@{viewModel::onClick}" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="69dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
+            android:clickable="false"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="none"
+            android:selectAllOnFocus="true"
+            android:textColorLink="@android:color/transparent"
+            app:layout_constraintBottom_toTopOf="@+id/sub"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text="@{viewModel.title}"
+            tools:focusableInTouchMode="false" />
+
+        <TextView
+            android:id="@+id/sub"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:inputType="none"
+            android:textAlignment="textEnd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:text='@{viewModel.sourceTitle}' />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="104dp"
+            android:layout_height="104dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="false"
+            android:background="@android:color/transparent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:setXliftImage="@{viewModel}"
+            app:srcCompat="@android:color/transparent" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="120dp" />
+    </android.support.constraint.ConstraintLayout>
+</layout>
